@@ -12,7 +12,7 @@ namespace BlockShare.SmartContracts
 	public class SmartContractDeployer
 	{
 		private readonly string ganacheUrl = "http://127.0.0.1:7545"; // або порт твого Ganache
-		private readonly string privateKey = "0xe9bd572c1b16b5feda90af9ecfbbd47a6152b68c84efd13244e3ff2bd1327917"; // приватний ключ з Ganache
+		private readonly string privateKey = "PRIVATE_KEY_FROM_YOUR_GANACHE_ACCOUNT_FOR_CONTRACT_DEPLOING"; // приватний ключ з Ganache
 		private readonly string abi = @"[ 
 	{
 		""anonymous"": false,
