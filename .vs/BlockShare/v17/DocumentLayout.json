@@ -1,0 +1,988 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mouse\\source\\repos\\BlockShare\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\smartcontracts\\smartcontractdeployer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:smartcontracts\\smartcontractdeployer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\filemetadatshortview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\filemetadatshortview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Temp\\9dbb1527-2a8a-4c12-9a46-55524fa69629_BlockShare.zip.629\\BlockShare\\Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\walletauthmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\walletauthmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Temp\\b163508b-9710-4a86-96b5-931e9a0a69dd_BlockShare.zip.9dd\\BlockShare\\Models\\WalletAuthModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Temp\\b02e3802-f8f8-46eb-9969-6207d2403088_BlockShare.zip.088\\BlockShare\\Models\\WalletAuthModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Temp\\2b1fa7ac-d22b-4a5b-a557-4801039b6656_BlockShare.zip.656\\BlockShare\\Models\\FileMetadatShortView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\file\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\file\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Temp\\ae613cc3-7c13-4add-b5d0-6f2656251bc8_BlockShare.zip.bc8\\BlockShare\\Models\\DashboardViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Temp\\db50f67d-5064-4d7c-aa56-e7d32e980ca8_BlockShare.zip.ca8\\BlockShare\\Models\\AccessUpdateViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\accessupdateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\accessupdateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Temp\\16da9039-4252-4758-9503-9c1130cbbb00_BlockShare.zip.b00\\BlockShare\\Models\\AccessUpdateViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\filemetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\filemetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\blockchainrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\blockchainrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\services\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:services\\encryptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\file\\upload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\file\\upload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.BlockchainRecords.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\controllers\\blockscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:controllers\\blockscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\file\\accesshistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\file\\accesshistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\file\\accessiblefiles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\file\\accessiblefiles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\file\\allpublicfiles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\file\\allpublicfiles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\file\\myfiles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\file\\myfiles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.Files.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.FileAccessLogs.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\account\\walletconnecterror.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\account\\walletconnecterror.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.AccessEntries.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\smartcontracts\\fileregistry.byte.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:smartcontracts\\fileregistry.byte.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\services\\ipfsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:services\\ipfsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\fileaccesslog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\fileaccesslog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\blocks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\blocks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\file\\updateaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\file\\updateaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\account\\passwordresetsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\account\\passwordresetsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\views\\account\\emailconfirmed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:views\\account\\emailconfirmed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Dashboard\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Dashboard\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\models\\filesaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:models\\filesaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\services\\walletservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:services\\walletservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\migrations\\20250505073642_addaddresswallettouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:migrations\\20250505073642_addaddresswallettouser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\migrations\\20250504133359_initmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:migrations\\20250504133359_initmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\migrations\\20250512063405_addblockchainfileidtofilemetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:migrations\\20250512063405_addblockchainfileidtofilemetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|c:\\users\\mouse\\source\\repos\\blockshare\\migrations\\20250511155847_addaccesslogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F51E04E-7540-4691-AF59-261D834393B7}|BlockShare.csproj|solutionrelative:migrations\\20250511155847_addaccesslogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 387,
+          "SelectedChildIndex": 28,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{007a3a6b-b5b2-454d-a2bd-cf929f989be2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Temp\\9dbb1527-2a8a-4c12-9a46-55524fa69629_BlockShare.zip.629\\BlockShare\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\9dbb1527-2a8a-4c12-9a46-55524fa69629_BlockShare.zip.629\\BlockShare\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Temp\\9dbb1527-2a8a-4c12-9a46-55524fa69629_BlockShare.zip.629\\BlockShare\\Models\\ErrorViewModel.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\9dbb1527-2a8a-4c12-9a46-55524fa69629_BlockShare.zip.629\\BlockShare\\Models\\ErrorViewModel.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:59:30.004Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WalletAuthModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Temp\\b163508b-9710-4a86-96b5-931e9a0a69dd_BlockShare.zip.9dd\\BlockShare\\Models\\WalletAuthModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\b163508b-9710-4a86-96b5-931e9a0a69dd_BlockShare.zip.9dd\\BlockShare\\Models\\WalletAuthModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Temp\\b163508b-9710-4a86-96b5-931e9a0a69dd_BlockShare.zip.9dd\\BlockShare\\Models\\WalletAuthModel.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\b163508b-9710-4a86-96b5-931e9a0a69dd_BlockShare.zip.9dd\\BlockShare\\Models\\WalletAuthModel.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:59:16.007Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WalletAuthModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Temp\\b02e3802-f8f8-46eb-9969-6207d2403088_BlockShare.zip.088\\BlockShare\\Models\\WalletAuthModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\b02e3802-f8f8-46eb-9969-6207d2403088_BlockShare.zip.088\\BlockShare\\Models\\WalletAuthModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Temp\\b02e3802-f8f8-46eb-9969-6207d2403088_BlockShare.zip.088\\BlockShare\\Models\\WalletAuthModel.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\b02e3802-f8f8-46eb-9969-6207d2403088_BlockShare.zip.088\\BlockShare\\Models\\WalletAuthModel.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:59:03.977Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FileMetadatShortView.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Temp\\2b1fa7ac-d22b-4a5b-a557-4801039b6656_BlockShare.zip.656\\BlockShare\\Models\\FileMetadatShortView.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\2b1fa7ac-d22b-4a5b-a557-4801039b6656_BlockShare.zip.656\\BlockShare\\Models\\FileMetadatShortView.cs",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Temp\\2b1fa7ac-d22b-4a5b-a557-4801039b6656_BlockShare.zip.656\\BlockShare\\Models\\FileMetadatShortView.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\2b1fa7ac-d22b-4a5b-a557-4801039b6656_BlockShare.zip.656\\BlockShare\\Models\\FileMetadatShortView.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:58:52.531Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Temp\\ae613cc3-7c13-4add-b5d0-6f2656251bc8_BlockShare.zip.bc8\\BlockShare\\Models\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\ae613cc3-7c13-4add-b5d0-6f2656251bc8_BlockShare.zip.bc8\\BlockShare\\Models\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Temp\\ae613cc3-7c13-4add-b5d0-6f2656251bc8_BlockShare.zip.bc8\\BlockShare\\Models\\DashboardViewModel.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\ae613cc3-7c13-4add-b5d0-6f2656251bc8_BlockShare.zip.bc8\\BlockShare\\Models\\DashboardViewModel.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:57:24.115Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AccessUpdateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Temp\\db50f67d-5064-4d7c-aa56-e7d32e980ca8_BlockShare.zip.ca8\\BlockShare\\Models\\AccessUpdateViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\db50f67d-5064-4d7c-aa56-e7d32e980ca8_BlockShare.zip.ca8\\BlockShare\\Models\\AccessUpdateViewModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Temp\\db50f67d-5064-4d7c-aa56-e7d32e980ca8_BlockShare.zip.ca8\\BlockShare\\Models\\AccessUpdateViewModel.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\db50f67d-5064-4d7c-aa56-e7d32e980ca8_BlockShare.zip.ca8\\BlockShare\\Models\\AccessUpdateViewModel.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:57:02.76Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AccessUpdateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Temp\\16da9039-4252-4758-9503-9c1130cbbb00_BlockShare.zip.b00\\BlockShare\\Models\\AccessUpdateViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\16da9039-4252-4758-9503-9c1130cbbb00_BlockShare.zip.b00\\BlockShare\\Models\\AccessUpdateViewModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Temp\\16da9039-4252-4758-9503-9c1130cbbb00_BlockShare.zip.b00\\BlockShare\\Models\\AccessUpdateViewModel.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\16da9039-4252-4758-9503-9c1130cbbb00_BlockShare.zip.b00\\BlockShare\\Models\\AccessUpdateViewModel.cs [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:56:46.231Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:56:21.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FileMetadatShortView.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FileMetadatShortView.cs",
+              "RelativeDocumentMoniker": "Models\\FileMetadatShortView.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FileMetadatShortView.cs",
+              "RelativeToolTip": "Models\\FileMetadatShortView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:56:17.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WalletAuthModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\WalletAuthModel.cs",
+              "RelativeDocumentMoniker": "Models\\WalletAuthModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\WalletAuthModel.cs",
+              "RelativeToolTip": "Models\\WalletAuthModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:56:05.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Upload.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\Upload.cshtml",
+              "RelativeDocumentMoniker": "Views\\File\\Upload.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\Upload.cshtml",
+              "RelativeToolTip": "Views\\File\\Upload.cshtml",
+              "ViewState": "AQIAAFgBAAAAAAAAAAAAAC8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T18:14:33.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "settings.json",
+              "DocumentMoniker": "C:\\Users\\mouse\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
+              "ToolTip": "C:\\Users\\mouse\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAACMAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-15T20:25:14.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "WalletConnectError.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\WalletConnectError.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\WalletConnectError.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\WalletConnectError.cshtml",
+              "RelativeToolTip": "Views\\Account\\WalletConnectError.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-15T06:41:53.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAAAA4AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-14T13:09:16.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "FileRegistry.byte.txt",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\SmartContracts\\FileRegistry.byte.txt",
+              "RelativeDocumentMoniker": "SmartContracts\\FileRegistry.byte.txt",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\SmartContracts\\FileRegistry.byte.txt",
+              "RelativeToolTip": "SmartContracts\\FileRegistry.byte.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-05-14T07:16:53.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\EmailService.cs",
+              "RelativeToolTip": "Services\\EmailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T07:14:57.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "IpfsService.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\IpfsService.cs",
+              "RelativeDocumentMoniker": "Services\\IpfsService.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\IpfsService.cs",
+              "RelativeToolTip": "Services\\IpfsService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T07:14:49.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SmartContractDeployer.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\SmartContracts\\SmartContractDeployer.cs",
+              "RelativeDocumentMoniker": "SmartContracts\\SmartContractDeployer.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\SmartContracts\\SmartContractDeployer.cs*",
+              "RelativeToolTip": "SmartContracts\\SmartContractDeployer.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T07:10:29.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T19:25:42.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "RegisterConfirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\RegisterConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\RegisterConfirmation.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\RegisterConfirmation.cshtml",
+              "RelativeToolTip": "Views\\Account\\RegisterConfirmation.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T17:31:44.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "PasswordResetSuccess.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\PasswordResetSuccess.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\PasswordResetSuccess.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\PasswordResetSuccess.cshtml",
+              "RelativeToolTip": "Views\\Account\\PasswordResetSuccess.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T17:31:37.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "EmailConfirmed.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\EmailConfirmed.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\EmailConfirmed.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\EmailConfirmed.cshtml",
+              "RelativeToolTip": "Views\\Account\\EmailConfirmed.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T17:31:13.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T17:31:12.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "20250512063405_AddBlockchainFileIdToFileMetadata.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250512063405_AddBlockchainFileIdToFileMetadata.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250512063405_AddBlockchainFileIdToFileMetadata.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250512063405_AddBlockchainFileIdToFileMetadata.cs",
+              "RelativeToolTip": "Migrations\\20250512063405_AddBlockchainFileIdToFileMetadata.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T06:34:05.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-11T20:07:19.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAACkAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T20:02:22.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EncryptionService.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\EncryptionService.cs",
+              "RelativeDocumentMoniker": "Services\\EncryptionService.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\EncryptionService.cs",
+              "RelativeToolTip": "Services\\EncryptionService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T20:01:36.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "20250511155847_AddAccessLogs.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250511155847_AddAccessLogs.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250511155847_AddAccessLogs.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250511155847_AddAccessLogs.cs",
+              "RelativeToolTip": "Migrations\\20250511155847_AddAccessLogs.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:58:47.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FileMetadata.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FileMetadata.cs",
+              "RelativeDocumentMoniker": "Models\\FileMetadata.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FileMetadata.cs",
+              "RelativeToolTip": "Models\\FileMetadata.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:57:04.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "BlockchainRecord.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\BlockchainRecord.cs",
+              "RelativeDocumentMoniker": "Models\\BlockchainRecord.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\BlockchainRecord.cs",
+              "RelativeToolTip": "Models\\BlockchainRecord.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:49:35.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccessUpdateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\AccessUpdateViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\AccessUpdateViewModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\AccessUpdateViewModel.cs",
+              "RelativeToolTip": "Models\\AccessUpdateViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:49:31.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AccessHistory.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\AccessHistory.cshtml",
+              "RelativeDocumentMoniker": "Views\\File\\AccessHistory.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\AccessHistory.cshtml",
+              "RelativeToolTip": "Views\\File\\AccessHistory.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T15:49:07.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:41:19.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "FileAccessLog.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FileAccessLog.cs",
+              "RelativeDocumentMoniker": "Models\\FileAccessLog.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FileAccessLog.cs",
+              "RelativeToolTip": "Models\\FileAccessLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:40:45.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "BlocksController.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\BlocksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BlocksController.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\BlocksController.cs",
+              "RelativeToolTip": "Controllers\\BlocksController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:31:00.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:23:58.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "WalletService.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\WalletService.cs",
+              "RelativeDocumentMoniker": "Services\\WalletService.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Services\\WalletService.cs",
+              "RelativeToolTip": "Services\\WalletService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:23:54.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\DashboardViewModel.cs",
+              "RelativeToolTip": "Models\\DashboardViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T15:16:12.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\File\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\Index.cshtml",
+              "RelativeToolTip": "Views\\File\\Index.cshtml",
+              "ViewState": "AQIAADoAAAAAAAAAAAAAAEkAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T15:13:50.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "FilesAccess.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FilesAccess.cs",
+              "RelativeDocumentMoniker": "Models\\FilesAccess.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Models\\FilesAccess.cs",
+              "RelativeToolTip": "Models\\FilesAccess.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T14:45:46.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "UpdateAccess.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\UpdateAccess.cshtml",
+              "RelativeDocumentMoniker": "Views\\File\\UpdateAccess.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\UpdateAccess.cshtml",
+              "RelativeToolTip": "Views\\File\\UpdateAccess.cshtml",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAAACsBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-11T14:43:19.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "bootstrap-grid.css.map",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-09T08:27:13.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGMAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T08:09:34.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAANgBAAAAAAAAAAAAANcBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-09T08:06:43.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AllPublicFiles.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\AllPublicFiles.cshtml",
+              "RelativeDocumentMoniker": "Views\\File\\AllPublicFiles.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\AllPublicFiles.cshtml",
+              "RelativeToolTip": "Views\\File\\AllPublicFiles.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T07:42:13.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FileController.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\FileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FileController.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Controllers\\FileController.cs",
+              "RelativeToolTip": "Controllers\\FileController.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAGwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T07:41:50.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AccessibleFiles.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\AccessibleFiles.cshtml",
+              "RelativeDocumentMoniker": "Views\\File\\AccessibleFiles.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\AccessibleFiles.cshtml",
+              "RelativeToolTip": "Views\\File\\AccessibleFiles.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T07:40:46.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "MyFiles.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\MyFiles.cshtml",
+              "RelativeDocumentMoniker": "Views\\File\\MyFiles.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\File\\MyFiles.cshtml",
+              "RelativeToolTip": "Views\\File\\MyFiles.cshtml",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAsAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T07:40:27.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Blocks\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Blocks\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Blocks\\Index.cshtml",
+              "RelativeToolTip": "Views\\Blocks\\Index.cshtml",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAACwAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T07:37:45.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAAAH4AAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T07:35:57.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "20250505073642_AddAddressWalletToUser.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250505073642_AddAddressWalletToUser.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250505073642_AddAddressWalletToUser.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250505073642_AddAddressWalletToUser.cs",
+              "RelativeToolTip": "Migrations\\20250505073642_AddAddressWalletToUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T07:36:42.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\Dashboard\\Index.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-04T19:03:12.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "20250504133359_InitMigration.cs",
+              "DocumentMoniker": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250504133359_InitMigration.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250504133359_InitMigration.cs",
+              "ToolTip": "C:\\Users\\mouse\\source\\repos\\BlockShare\\Migrations\\20250504133359_InitMigration.cs",
+              "RelativeToolTip": "Migrations\\20250504133359_InitMigration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:34:00.273Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "dbo.FileAccessLogs [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.FileAccessLogs.sql",
+              "ToolTip": "dbo.FileAccessLogs [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-14T19:44:02.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "dbo.BlockchainRecords [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.BlockchainRecords.sql",
+              "ToolTip": "dbo.BlockchainRecords [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-14T07:55:51.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "dbo.Files [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.Files.sql",
+              "ToolTip": "dbo.Files [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-11T15:24:48.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "dbo.AccessEntries [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.AccessEntries.sql",
+              "ToolTip": "dbo.AccessEntries [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-11T14:47:12.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/BlockShareDb/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-08T11:07:21.796Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+﻿@using System.Text.Json
+@model IEnumerable<FileMetadata>
+@{
+    ViewBag.Title = "Публічні файли";
+}
+<div class="row">
+
+    <div class="row">
+        <form method="get" asp-action="AllPublicFiles" class="mb-3">
+            <input type="text" name="search" placeholder="Searching by name or owner..." value="@Context.Request.Query["search"]" class="form-control mb-2" />
+            <select name="sort" class="form-select mb-2">
+                <option value="">Sorting by default</option>
+                <option value="name" selected="@("name" == Context.Request.Query["sort"])">Sorting by file name</option>
+                <option value="date" selected="@("name" == Context.Request.Query["sort"])">Sorting by date</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">Apply</button>
+        </form>
+<div class="file-table-container">
+<h2>Public files</h2>
+
+    <table class="custom-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>IPFS</th>
+            <th>Date</th>
+            <th>Owner</th>
+                <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td>@file.IpfsHash[..Math.Min(file.IpfsHash.Length, 6)]…
+                                <img class="copy-icon" onclick="copyToClipboard('@file.IpfsHash')" src="~/images/paste.png">
+                </td>
+                <td>@file.UploadDate.ToString()</td>
+                            <td>
+                                @file.OwnerWalletAddress[..Math.Min(file.OwnerWalletAddress.Length, 6)]…
+                                <img class="copy-icon" onclick="copyToClipboard('@file.OwnerWalletAddress')" src="~/images/paste.png">
+                    </td>
+             
+                    <td>
+                  <button onclick='downloadAndDecrypt(@Html.Raw(JsonSerializer.Serialize(file.IpfsHash)), @Html.Raw(JsonSerializer.Serialize(file.EncryptionKey)), @Html.Raw(JsonSerializer.Serialize(file.FileName)))'>
+                                    ⬇️ Download
+                        </button>
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+<script>
+            async function downloadAndDecrypt(ipfsHash, base64Key, originalName) {
+                try {
+                    const res = await fetch(`/File/DownloadFromIpfs?hash=${ipfsHash}`);
+                    if (!res.ok) throw new Error("Помилка HTTP: " + res.status);
+                    const encryptedData = await res.arrayBuffer();
+
+                    const raw = new Uint8Array(encryptedData);
+                    const iv = raw.slice(0, 12);
+                    const ciphertext = raw.slice(12);
+
+                    const decodedBase64 = decodeURIComponent(base64Key);
+                    const aesKey = new Uint8Array(atob(decodedBase64).split('').map(c => c.charCodeAt(0)));
+
+                    if (aesKey.length !== 32) {
+                        console.error("Невірна довжина ключа:", aesKey.length);
+                        alert("Невірний AES ключ");
+                        return;
+                    }
+
+                    const cryptoKey = await crypto.subtle.importKey(
+                        "raw",
+                        aesKey,
+                        { name: "AES-GCM", length: 256 },
+                        false,
+                        ["decrypt"]
+                    );
+
+                    const decrypted = await crypto.subtle.decrypt(
+                        { name: "AES-GCM", iv },
+                        cryptoKey,
+                        ciphertext
+                    );
+
+                    const blob = new Blob([decrypted]);
+                    const url = URL.createObjectURL(blob);
+
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = originalName.replace(".enc", "");
+                    a.click();
+
+                    URL.revokeObjectURL(url);
+                } catch (err) {
+                    console.error("Дешифрування не вдалося:", err);
+                    alert("Помилка при дешифруванні або доступі");
+                }
+            }
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert("Copied!");
+                });
+            }
+</script>
+</div>

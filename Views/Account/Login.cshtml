@@ -1,0 +1,12 @@
+﻿<form asp-action="Login" method="post" class="login-container">
+    <h2>Log in</h2>
+        <label for="email">Email</label>
+        <input type="email"name="email" id="email" required />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+        <button type="submit">Log in</button>
+    <h6>
+        <a asp-action="ForgotPassword"
+           asp-controller="Account">Forgot password ?</a>
+    </h6>
+</form>

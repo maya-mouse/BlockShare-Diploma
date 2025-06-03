@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlockShare - Безпечне зберігання файлів</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BlockShare.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <i class="fas fa-cubes me-2" style="margin-left:-15px;"></i>BlockShare
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <div class="layout">
+        <!-- Sidebar for authenticated users -->
+        <div class="sidebar collapsed" id="sidebar">
+                <div class="sidebar-brand">
+
+                 
+                </div>
+            <div class="sidebar-brand">
+          
+                <a href="/" class="text-decoration-none text-white">
+       
+                    <i class="fas fa-cubes me-2"></i>BlockShare
+                </a>
+            </div>
+            
+            <div class="profile-section">
+              
+                <div class="profile-name">@User.Identity.Name</div>
+                <small class="text-white-50">Blockchain User</small>
+            </div>
+            
+            <ul class="nav flex-column mt-3 mb-5">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="File" asp-action="Index">
+                        <span class="nav-item-icon"><i class="fas fa-tachometer-alt"></i></span> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="File" asp-action="MyFiles">
+                        <span class="nav-item-icon"><i class="fas fa-folder"></i></span> My Files
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="File" asp-action="AllPublicFiles">
+                        <span class="nav-item-icon"><i class="fas fa-globe"></i></span> Public Files
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="File" asp-action="AccessibleFiles">
+                        <span class="nav-item-icon"><i class="fas fa-share-alt"></i></span> Accessible Files
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="File" asp-action="AccessHistory">
+                            <span class="nav-item-icon"><i class="fas fa-clipboard-list"></i></span>Access History
+                        </a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Blocks" asp-action="Index">
+                        <span class="nav-item-icon"><i class="fas fa-link"></i></span> Blockchain Records
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="Profile">
+                        <span class="nav-item-icon"><i class="fas fa-user-circle"></i></span> My Profile
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" class="btn btn-outline-light btn-sm w-100">
+                        <i class="fas fa-sign-out-alt me-2"></i>Log out
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <button class="toggle-sidebar" id="toggleSidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="content-with-sidebar" id="content">
+            <main class="content" id="mainContent">
+                <!-- Content for authenticated users -->
+                <div class="container py-4">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+        </div>
+    }
+    else
+    {
+        <!-- Regular header for non-authenticated users -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <i class="fas fa-cubes me-2"></i>BlockShare
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="btn btn-primary me-2" href="/Account/Login"><i class="fas fa-sign-in-alt me-1"></i>Log in</a></li>
+                            <li class="nav-item"><a class="btn btn-primary" href="/Account/Register"><i class="fas fa-user-plus me-1"></i>Sign up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        @RenderBody();
+        <footer class="py-4 mt-5 border-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h5 style="color: #a26ae4;">BlockShare</h5>
+                        <p class="text-muted small">Secure file storage and sharing platform powered by blockchain technology.</p>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h6 style="color: #a26ae4;">Company</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-muted small">KPI</a></li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-muted small">
+                                    Educational and Research Institute
+                                    of Nuclear and Thermal Power Engineering
+                                </a>
+                            </li>
+                            <li><a href="#" class="text-decoration-none text-muted small">Tkachenko Maya</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h6 style="color: #a26ae4;">Resources</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-muted small">Blog</a></li>
+                            <li><a href="#" class="text-decoration-none text-muted small">Documentation</a></li>
+      
+                        </ul>
+                    </div>
+                    <div class="col-md-2 mb-4 mb-md-0">
+                        <h6 style="color: #a26ae4;">Legacy</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-muted small">Privacy Policy</a></li>
+                            <li><a href="#" class="text-decoration-none text-muted small">Terms of Service</a></li>
+                            <li><a href="#" class="text-decoration-none text-muted small">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h6 style="color: #a26ae4;">Connect</h6>
+                        <div class="d-flex gap-2">
+                            <a href="https://www.pinterest.com/mmelolontha/" class="text-decoration-none text-muted"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="text-decoration-none text-muted"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="small text-muted mb-0">&copy; 2025 BlockShare. All rights reserved.</p>
+                    <div>
+                        <img src="favicon.ico" alt="BlockShare Logo" style="width: 40px;">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    }
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    
+    <script>
+        // Script for sidebar toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('content');
+            const toggleButton = document.getElementById('toggleSidebar');
+            
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function() {
+                    sidebar.classList.toggle('sidebar-collapsed');
+                    content.classList.toggle('content-expanded');
+                    toggleButton.classList.toggle('active');
+                    
+                    // Change the icon based on sidebar state
+                    const icon = toggleButton.querySelector('i');
+                    if (sidebar.classList.contains('sidebar-collapsed')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-arrow-right');
+                    } else {
+                        icon.classList.remove('fa-arrow-right');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Handle responsive behavior
+            function checkWidth() {
+                if (window.innerWidth < 992) {
+                    if (sidebar) {
+                        sidebar.classList.add('sidebar-collapsed');
+                        content.classList.add('content-expanded');
+                        
+                        if (toggleButton) {
+                            const icon = toggleButton.querySelector('i');
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-arrow-right');
+                        }
+                    }
+                } else {
+                    if (sidebar) {
+                        sidebar.classList.remove('sidebar-collapsed');
+                        content.classList.remove('content-expanded');
+                        
+                        if (toggleButton) {
+                            const icon = toggleButton.querySelector('i');
+                            icon.classList.remove('fa-arrow-right');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                }
+            }
+            
+            // Initial check
+            checkWidth();
+            
+            // Listen for window resize
+            window.addEventListener('resize', checkWidth);
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>

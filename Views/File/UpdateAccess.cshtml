@@ -1,0 +1,333 @@
+﻿@model AccessUpdateViewModel
+
+<div class="access-edit-container">
+    <div class="access-edit-card">
+        <div class="card-body">
+            <h3 class="mb-4 text-center text-dark">Update file access</h3>
+
+            <div class="form-check form-switch mb-4">
+                <input class="form-check-input" type="checkbox" id="isPublicCheckbox"
+                       onchange="onAccessChange()" @(Model.IsPublic ? "checked" : "") />
+                <label class="form-check-label text-dark fw-bold" for="isPublicCheckbox">
+                    Public Access
+                </label>
+            </div>
+
+            <div id="walletSection" style="display: @(Model.IsPublic ? "none" : "block")">
+
+                <label class="form-label text-dark fw-bold">Wallets with access:</label>
+
+                <table class="table table-bordered" id="walletTable">
+                    <thead>
+                        <tr>
+                            <th>Wallet Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var wallet in Model.AllowedWallets)
+                        {
+                        <tr>
+                            <td>@wallet</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm" onclick="removeWallet('@wallet')">❌ Remove</button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <div class="input-group mb-3">
+                    <input type="text" id="newWalletInput" class="form-control" placeholder="0x123...">
+                    <button class="btn btn-outline-success" type="button" onclick="addWallet()">➕ Add</button>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-dark btn-lg" onclick="submitAccessChange(@Model.FileId)">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+<script>
+    let wallets = @Html.Raw(Json.Serialize(Model.AllowedWallets ?? new List<string>()));
+
+    function onAccessChange() {
+        const isPublic = document.getElementById('isPublicCheckbox').checked;
+        document.getElementById('walletSection').style.display = isPublic ? 'none' : 'block';
+    }
+
+    function addWallet() {
+        const input = document.getElementById('newWalletInput');
+        const address = input.value.trim();
+
+        if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
+            alert("❌ Невірна Ethereum-адреса");
+            return;
+        }
+
+        if (wallets.includes(address)) {
+            alert("🔁 Адреса вже додана");
+            return;
+        }
+
+        wallets.push(address);
+        updateWalletTable();
+        input.value = '';
+    }
+
+    function removeWallet(address) {
+        wallets = wallets.filter(w => w !== address);
+        updateWalletTable();
+    }
+
+    function updateWalletTable() {
+        const tableBody = document.querySelector('#walletTable tbody');
+        tableBody.innerHTML = '';
+
+        for (const wallet of wallets) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${wallet}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="removeWallet('${wallet}')">❌ Remove</button>
+                </td>`;
+            tableBody.appendChild(row);
+        }
+    }
+
+    async function submitAccessChange(fileId) {
+        const isPublic = document.getElementById('isPublicCheckbox').checked;
+
+        try {
+            const res = await fetch('/File/UpdateAccess', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    fileId,
+                    isPublic,
+                    allowedWallets: wallets
+                })
+            });
+
+            const data = await res.json();
+            if (!data.success) {
+                alert("❌ Помилка: " + (data.error || "Невідома помилка"));
+                return;
+            }
+
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await provider.send("eth_requestAccounts", []);
+            const signer = provider.getSigner();
+
+            const contractAddress = await fetch('/File/GetContractAddress')
+                .then(res => res.json())
+                .then(data => data.contractAddress);
+            const contractABI = [
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "fileId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "grantedTo",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "AccessGranted",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "fileId",
+                            "type": "uint256"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "revokedFrom",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "AccessRevoked",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "internalType": "string",
+                            "name": "ipfsHash",
+                            "type": "string"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "uploader",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "uint256",
+                            "name": "timestamp",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "FileAdded",
+                    "type": "event"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "_ipfsHash",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "allowedUsers",
+                            "type": "address[]"
+                        }
+                    ],
+                    "name": "addFile",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "name": "fileCount",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_index",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "getFile",
+                    "outputs": [
+                        {
+                            "internalType": "string",
+                            "name": "",
+                            "type": "string"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_index",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "grantAccess",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_index",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "hasAccess",
+                    "outputs": [
+                        {
+                            "internalType": "bool",
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "_index",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "revokeAccess",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                }
+            ];
+            const contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+            const fileIndex = data.fileIndex;
+
+            for (const addr of data.granted) {
+                try {
+                    await contract.grantAccess(fileIndex, addr);
+                    console.log(`✅ Access granted to ${addr}`);
+                } catch (err) {
+                    console.warn(`❌ Failed to grant access to ${addr}:`, err);
+                }
+            }
+
+            for (const addr of data.revoked) {
+                try {
+                    await contract.revokeAccess(fileIndex, addr);
+                    console.log(`✅ Access revoked from ${addr}`);
+                } catch (err) {
+                    console.warn(`❌ Failed to revoke access from ${addr}:`, err);
+                }
+            }
+
+            alert("✅ Доступ оновлено успішно і в контракті");
+
+        } catch (err) {
+            console.error("Помилка при оновленні доступу:", err);
+            alert("❌ Виникла помилка при оновленні доступу");
+        }
+    }
+</script>
+
+

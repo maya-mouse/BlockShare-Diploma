@@ -1,0 +1,59 @@
+﻿<div class="register-container">
+    <h2>Sign Up</h2>
+    <form asp-action="Register" method="post" id="registerForm">
+        <label>Username</label>
+        <input type ="text"name="username" required />
+        <label>Email</label>
+        <input type="email" name="email" required />
+        <label>Password</label>
+        <input type="password" name="password" required />
+
+        <button type="button" onclick="connectWalletAndAttach()">🔗 Connect MetaMask</button>
+
+        <input type="hidden" name="walletAddress" id="walletAddress" />
+
+        <button type="submit"> Sign Up</button>
+    </form>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script>
+    async function connectWalletAndAttach() {
+        if (typeof window.ethereum === 'undefined') {
+            alert('MetaMask не встановлено!');
+            return;
+        }
+
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const address = accounts[0];
+
+        // Отримай nonce з сервера
+        const response = await fetch('/Account/ConnectWallet');
+        const nonce = await response.text();
+
+
+        // Підписати nonce
+        const signature = await window.ethereum.request({
+            method: 'personal_sign',
+            params: [nonce, address],
+        });
+
+        // Надіслати на бекенд для перевірки
+        const verifyResponse = await fetch('/Account/VerifyWallet', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ address, signature })
+        });
+
+        if (!verifyResponse.ok) {
+            const err = await verifyResponse.text();
+            alert("Помилка верифікації: " + err);
+            return;
+        }
+
+        document.getElementById('walletAddress').value = address;
+        alert("Адресу гаманця успішно підтверджено та додано!");
+    }
+</script>
+
+
+

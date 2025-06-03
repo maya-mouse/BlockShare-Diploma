@@ -1,0 +1,60 @@
+﻿@model List<BlockchainRecord>
+
+<div class="row">
+    <form method="get" asp-action="Index" class="mb-3">
+        <input type="text" name="search" placeholder="Searching by owner, blockHash, txHash..." value="@Context.Request.Query["search"]" class="form-control mb-2" />
+      <button type="submit" class="btn btn-primary">Apply</button>
+    </form>
+<div class="file-table-container">
+    <h2>Blocks record</h2>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Block</th>
+                <th>IPFS Hash</th>
+                <th>Tx Hash</th>
+                <th>Block Hash</th>
+                <th>Parent Hash</th>
+                <th>Date</th>
+                <th>Uploader</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var block in Model)
+            {
+                <tr>
+                    <td>@block.BlockNumber</td>
+                    <td class="hash-cell" title="@block.IpfsHash">
+                        @block.IpfsHash[..Math.Min(block.IpfsHash.Length, 6)]…
+                        <img class="copy-icon" onclick="copyToClipboard('@block.IpfsHash')" src="images/paste.png"></img>
+                    </td>
+                    <td class="hash-cell" title="@block.TransactionHash">
+                        @block.TransactionHash[..Math.Min(block.TransactionHash.Length, 6)]…
+                        <img class="copy-icon" onclick="copyToClipboard('@block.TransactionHash')" src="images/paste.png"></img>
+                    </td>
+                    <td class="hash-cell" title="@block.BlockHash">
+                        @block.BlockHash[..Math.Min(block.BlockHash.Length, 6)]…
+                        <img class="copy-icon" onclick="copyToClipboard('@block.BlockHash')" src="images/paste.png"></img>
+                    </td>
+                    <td class="hash-cell" title="@block.ParentHash">
+                        @block.ParentHash[..Math.Min(block.ParentHash.Length, 6)]…
+                        <img class="copy-icon" onclick="copyToClipboard('@block.ParentHash')" src="images/paste.png"></img>
+                    </td>
+                    <td>@block.Timestamp.ToLocalTime()</td>
+                    <td class="hash-cell" title="@block.UploaderAddress">
+                        @block.UploaderAddress[..Math.Min(block.UploaderAddress.Length, 6)]…
+                        <img class="copy-icon" onclick="copyToClipboard('@block.UploaderAddress')" src="images/paste.png"></img>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</dv>
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Copied!");
+        });
+    }
+</script>

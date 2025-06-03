@@ -1,0 +1,130 @@
+﻿@model DashboardViewModel
+
+<div class="container mt-4">
+
+    <h2 class="mb-4" style="color:#c678dd;">Hello, @User.Identity.Name!</h2>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card text-white" style="background-color:#f9c5d1;">
+                <div class="card-body text-center">
+                    <h5 class="card-title" style="color:rgb(72,20,140)">Total files</h5>
+                    <p class="display-6">@Model.TotalFiles</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white" style="background-color:#c5c6f9;">
+                <div class="card-body text-center">
+                    <h5 class="card-title" style="color:rgb(72,20,140)">Public files</h5>
+                    <p class="display-6">@Model.PublicFiles</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white" style="background-color:#c5c6f9;">
+                <div class="card-body text-center">
+                    <h5 class="card-title" style="color:rgb(72,20,140)">Accessible Files</h5>
+                    <p class="display-6">@Model.AccessibleFiles</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <a href="File/Upload" class="btn btn-lg btn-outline-primary px-4 py-2">+ Upload new file</a>
+        </div>
+    </div>
+    <h4 class="mt-5" style="color:#a084dc;">Interactions</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title text-dark">You granted access to:</h5>
+                    @if (Model.WalletsWithAccessToMine.Any())
+                    {
+                        <ul class="list-group list-group-flush">
+                            @for (int i = 0; i < Model.WalletsWithAccessToMine.Count; i++)
+                            {
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>@Model.WalletsWithAccessToMine[i]</span>
+                                    <span>@Model.UsernamesWithAccessToMine[i]</span>
+                                </li>
+                            }
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No wallets</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <h5 class="card-title text-dark">You have access from:</h5>
+                    @if (Model.WalletsIAccessed.Any())
+                    {
+                        <ul class="list-group list-group-flush">
+           
+                                @for (int i = 0; i < Model.WalletsIAccessed.Count; i++)
+                            {
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>@Model.WalletsIAccessed[i]</span>
+                                    <span>@Model.UsernamesIAccessed[i]</span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No access granted yet</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h4 class="mb-3" style="color:#a084dc;">📁 Recent files</h4>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle shadow-sm rounded">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Public</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.RecentFiles.Any())
+                {
+                    foreach (var file in Model.RecentFiles)
+                    {
+                        <tr>
+                            <td>@file.FileName</td>
+                            <td>@file.UploadDate.ToString("dd.MM.yyyy HH:mm")</td>
+                            <td>
+                                @if (file.IsPublic)
+                                {
+                                    <span class="badge bg-success">Y</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">N</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3" class="text-muted text-center">Empty</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,85 @@
+﻿@model BlockShare.Models.User
+
+@{
+    ViewData["Title"] = "Мій профіль";
+}
+
+<h2 class="mt-4">Profile</h2>
+
+<div class="card mt-4 shadow-sm">
+    <div class="card-body">
+        <p><strong>Username : </strong> @Model.Username</p>
+        <p><strong>Email : </strong> @Model.Email</p>
+        <p><strong>Wallet address : </strong> <span id="walletAddress">@Model.WalletAddress 	<img class="copy-icon" onclick="copyToClipboard('@Model.WalletAddress')" src="~/images/paste.png"></span></p>
+    </div>
+</div>
+
+@* <div class="container mt-5" style="max-width: 700px;">
+    <div class="card shadow-sm border-0" style="background: linear-gradient(to right, #f9c5d1, #c5c6f9);">
+        <div class="card-body text-center">
+            <h3 class="mb-3 text-dark">Update MetaMask address</h3>
+            <button id="changeWalletBtn" class="btn btn-lg btn-outline-dark">🔄 Change wallet</button>
+            <p id="statusMsg" class="mt-4 text-dark fw-bold"></p>
+        </div>
+    </div>
+</div> *@
+
+@section Scripts {
+    <!-- ПРАВИЛЬНА версія ethers.js (UMD) -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+
+    <script>
+        document.getElementById('changeWalletBtn').addEventListener('click', async () => {
+            const statusMsg = document.getElementById('statusMsg');
+            statusMsg.textContent = "";
+
+            if (typeof window.ethereum === 'undefined') {
+                alert("Будь ласка, встановіть MetaMask.");
+                return;
+            }
+
+            try {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                await provider.send("eth_requestAccounts", []);
+                const signer = provider.getSigner();
+                const address = await signer.getAddress();
+
+                statusMsg.textContent = "Отримання nonce...";
+
+                const response = await fetch('/Account/ConnectWallet');
+                const nonce = await response.text();
+
+                statusMsg.textContent = "Підписування nonce...";
+
+                const signature = await signer.signMessage(nonce);
+
+                statusMsg.textContent = "Оновлення гаманця...";
+
+                const res = await fetch('/Account/UpdateWallet', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ address, signature })
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('walletAddress').textContent = address;
+                    statusMsg.textContent = "✅ Гаманець оновлено успішно!";
+                } else {
+                    statusMsg.textContent = "❌ Помилка: " + (data.error || "Не вдалося оновити гаманець.");
+                }
+            } catch (err) {
+                console.error(err);
+                statusMsg.textContent = "❌ Виникла помилка. Див. консоль.";
+            }
+        });
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied!");
+            });
+        }
+
+                </script>
+}

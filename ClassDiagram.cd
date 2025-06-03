@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BlockShare.Controllers.AccountController" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggQABAAAEEAAACAAABAIQAAABAIQAABEQAAAAIAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Controllers.BlocksController" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAIAAAAAgAAAAMAAAAAAAA=</HashCode>
+      <FileName>Controllers\BlocksController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Controllers.FileController" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgBAAgIIAAQAAAAAgAADBABgAABAMAAIAAAAA=</HashCode>
+      <FileName>Controllers\FileController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Controllers.HomeController" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEQAAAAAAAAAAIAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.BlockchainRecord" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAgAAAACAAAAAAAAAAAAAAAAAmAAIAA=</HashCode>
+      <FileName>Models\BlockchainRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.FileAccessLog" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAgAQAAAAAAAAAAAAAAAAABAAAAAAAIAIAA=</HashCode>
+      <FileName>Models\FileAccessLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.FileMetadata" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAIAIAAAAAAAAAAAAAAACCAADAAAAAAAABAIAA=</HashCode>
+      <FileName>Models\FileMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.FilesAccess" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAEAABAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\FilesAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.User" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAACAAAAAAAQAAAAAAAAAAIABAAAQAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.SmartContracts.SmartContractDeployer" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABkAAAAACAAAAAAAAAAAABABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmartContracts\SmartContractDeployer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Services.WalletService" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Services\WalletService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Services.IpfsService" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IpfsService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Services.EncryptionService" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\EncryptionService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Services.EmailService" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Services\EmailService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Program" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Data.AppDbContext" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAACAAAAAAAAAAAAAAAAAAABAAAAAAAAAAgAAAAIA=</HashCode>
+      <FileName>Data\AppDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.AccessUpdateViewModel" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\AccessUpdateViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.DashboardViewModel" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAgCgAAAAAAEAAAAAAAAIAEAIAAAAAAAAA=</HashCode>
+      <FileName>Models\DashboardViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.ErrorViewModel" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ErrorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.FileMetadatShortView" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\FileMetadatShortView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockShare.Models.WalletAuthModel" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAE=</HashCode>
+      <FileName>Models\WalletAuthModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="10" />
+</ClassDiagram>

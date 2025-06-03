@@ -1,0 +1,287 @@
+﻿@using System.Text.Json
+
+
+<div class="row">
+	<form method="get" asp-action="AccessibleFiles" class="mb-3">
+		<input type="text" name="search" placeholder="Searching by name or owner..." value="@Context.Request.Query["search"]" class="form-control mb-2" />
+		<select name="sort" class="form-select mb-2">
+			<option value="">Sorting by default</option>
+			<option value="name" selected="@("name" == Context.Request.Query["sort"])">Sorting by file name</option>
+			<option value="date" selected="@("name" == Context.Request.Query["sort"])">Sorting by date</option>
+		</select>
+
+		<button type="submit" class="btn btn-primary">Apply</button>
+	</form>
+
+
+<div class="file-table-container">
+    <h2>Accessibe files</h2>
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+					<th>IPFS</th>
+                <th>Date</th>
+                <th>Owner</th>
+      
+				<th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var file in Model)
+            {
+                <tr>
+                    <td>@file.FileName</td>
+						<td>  @file.IpfsHash.Substring(0, Math.Min(file.IpfsHash.Length, 6))...
+							<img class="copy-icon" onclick="copyToClipboard('@file.IpfsHash')" src="~/images/paste.png">
+						</td>
+                    <td>@file.UploadDate.ToString()</td>
+						<td> @file.OwnerWalletAddress.Substring(0, Math.Min(file.OwnerWalletAddress.Length, 6))...
+							<img class="copy-icon" onclick="copyToClipboard('@file.IpfsHash')" src="~/images/paste.png">
+						</td>
+					<td>
+							<button onclick='downloadAndDecrypt(@Html.Raw(JsonSerializer.Serialize(file.IpfsHash)), @Html.Raw(JsonSerializer.Serialize(file.EncryptionKey)), @Html.Raw(JsonSerializer.Serialize(file.FileName)), @file.BlockchainFileIndex)'>
+							⬇️ Download
+						</button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+<script>
+        async function downloadAndDecrypt(ipfsHash, base64Key, originalName, fileIndex) {
+            try {
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                const userAddress = accounts[0];
+
+			//	const contractAddress = "0x632076041a93fa06fe4bfeec526019b55b0e930c";
+				const contractAddress = await fetch('/File/GetContractAddress')
+					.then(res => res.json())
+					.then(data => data.contractAddress);
+			const contractABI = [
+					{
+						"anonymous": false,
+						"inputs": [
+							{
+								"indexed": false,
+								"internalType": "uint256",
+								"name": "fileId",
+								"type": "uint256"
+							},
+							{
+								"indexed": false,
+								"internalType": "address",
+								"name": "grantedTo",
+								"type": "address"
+							}
+						],
+						"name": "AccessGranted",
+						"type": "event"
+					},
+					{
+						"anonymous": false,
+						"inputs": [
+							{
+								"indexed": false,
+								"internalType": "uint256",
+								"name": "fileId",
+								"type": "uint256"
+							},
+							{
+								"indexed": false,
+								"internalType": "address",
+								"name": "revokedFrom",
+								"type": "address"
+							}
+						],
+						"name": "AccessRevoked",
+						"type": "event"
+					},
+					{
+						"anonymous": false,
+						"inputs": [
+							{
+								"indexed": false,
+								"internalType": "string",
+								"name": "ipfsHash",
+								"type": "string"
+							},
+							{
+								"indexed": false,
+								"internalType": "address",
+								"name": "uploader",
+								"type": "address"
+							},
+							{
+								"indexed": false,
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"name": "FileAdded",
+						"type": "event"
+					},
+					{
+						"inputs": [
+							{
+								"internalType": "string",
+								"name": "_ipfsHash",
+								"type": "string"
+							},
+							{
+								"internalType": "address[]",
+								"name": "allowedUsers",
+								"type": "address[]"
+							}
+						],
+						"name": "addFile",
+						"outputs": [],
+						"stateMutability": "nonpayable",
+						"type": "function"
+					},
+					{
+						"inputs": [],
+						"name": "fileCount",
+						"outputs": [
+							{
+								"internalType": "uint256",
+								"name": "",
+								"type": "uint256"
+							}
+						],
+						"stateMutability": "view",
+						"type": "function"
+					},
+					{
+						"inputs": [
+							{
+								"internalType": "uint256",
+								"name": "_index",
+								"type": "uint256"
+							}
+						],
+						"name": "getFile",
+						"outputs": [
+							{
+								"internalType": "string",
+								"name": "",
+								"type": "string"
+							}
+						],
+						"stateMutability": "view",
+						"type": "function"
+					},
+					{
+						"inputs": [
+							{
+								"internalType": "uint256",
+								"name": "_index",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "user",
+								"type": "address"
+							}
+						],
+						"name": "grantAccess",
+						"outputs": [],
+						"stateMutability": "nonpayable",
+						"type": "function"
+					},
+					{
+						"inputs": [
+							{
+								"internalType": "uint256",
+								"name": "_index",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "user",
+								"type": "address"
+							}
+						],
+						"name": "hasAccess",
+						"outputs": [
+							{
+								"internalType": "bool",
+								"name": "",
+								"type": "bool"
+							}
+						],
+						"stateMutability": "view",
+						"type": "function"
+					},
+					{
+						"inputs": [
+							{
+								"internalType": "uint256",
+								"name": "_index",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "user",
+								"type": "address"
+							}
+						],
+						"name": "revokeAccess",
+						"outputs": [],
+						"stateMutability": "nonpayable",
+						"type": "function"
+					}
+				];
+
+				const provider = new ethers.providers.Web3Provider(window.ethereum);
+				const signer = provider.getSigner();
+				const contract = new ethers.Contract(contractAddress, contractABI, signer);
+				const hasAccess = await contract.hasAccess(fileIndex, userAddress);
+
+                if (!hasAccess) 
+                {
+                    alert("⛔ У вас немає доступу до цього файлу.");
+                    return;
+                }
+
+                const res = await fetch(`/File/DownloadFromIpfs?hash=${ipfsHash}`);
+                if (!res.ok) throw new Error("Помилка HTTP: " + res.status);
+
+                const encryptedData = await res.arrayBuffer();
+                const raw = new Uint8Array(encryptedData);
+                const iv = raw.slice(0, 12);
+                const ciphertext = raw.slice(12);
+
+                const decodedBase64 = decodeURIComponent(base64Key);
+                const aesKey = new Uint8Array(atob(decodedBase64).split('').map(c => c.charCodeAt(0)));
+
+                const cryptoKey = await crypto.subtle.importKey(
+                    "raw", aesKey, { name: "AES-GCM", length: 256 }, false, ["decrypt"]
+                );
+
+                const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, cryptoKey, ciphertext);
+
+                const blob = new Blob([decrypted]);
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = originalName.replace(".enc", "");
+                a.click();
+                URL.revokeObjectURL(url);
+            } catch (err) {
+                console.error("Дешифрування не вдалося:", err);
+                alert("❌ Помилка при завантаженні або перевірці доступу.");
+            }
+        }
+		function copyToClipboard(text) {
+			navigator.clipboard.writeText(text).then(() => {
+				alert("Copied!");
+			});
+		}
+</script>
+</div>

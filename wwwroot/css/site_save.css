@@ -1,0 +1,328 @@
+﻿/* ======== БАЗА ======== */
+body {
+    background-color: #fffafa;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #fff !important;
+}
+
+img {
+    width: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ======== БОКОВА ПАНЕЛЬ ======== */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(to bottom right, #a084dc, #f9c5d1);
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+    .sidebar.collapsed {
+        transform: translateX(-250px);
+    }
+
+    .sidebar h2 {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .sidebar a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin: 1rem 0;
+        font-weight: 600;
+    }
+
+        .sidebar a:hover {
+            color: #4e2a84;
+        }
+
+    .sidebar form button {
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        font-weight: bold;
+    }
+
+.toggle-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: #a084dc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+/* Зміщення контенту при відкритій панелі */
+.sidebar:not(.collapsed) + .main-content {
+    margin-left: 250px;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f9f9fb;
+}
+
+/* ======== НАВІГАЦІЯ (якщо буде потрібна) ======== */
+.navbar {
+    background-color: #f9c5d1 !important;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #5a5a5a !important;
+}
+
+    .nav-link:hover {
+        color: #333 !important;
+    }
+
+/* ======== КНОПКИ ======== */
+.btn-primary {
+    background-color: #c5c6f9;
+    border-color: #c5c6f9;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background-color: #a9aaf5;
+        border-color: #a9aaf5;
+    }
+
+.btn-outline-primary {
+    border-color: #c5c6f9;
+    color: #c5c6f9;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #c5c6f9;
+        color: #fff;
+    }
+
+/* ======== КАРТКИ ======== */
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(200, 200, 200, 0.2);
+    background-color: #ffffff;
+}
+
+.card-title {
+    color: #c678dd;
+}
+
+/* ======== ТАБЛИЦІ ======== */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f0f7;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(200, 200, 200, 0.2);
+}
+
+    .custom-table th, .custom-table td {
+        padding: 12px 16px;
+        text-align: left;
+    }
+
+    .custom-table thead {
+        background-color: #d8c1f5;
+        color: #4a148c;
+    }
+
+    .custom-table tbody tr:nth-child(even) {
+        background-color: #f9f0f7;
+    }
+
+    .custom-table a {
+        color: #6a1b9a;
+        font-weight: bold;
+    }
+
+        .custom-table a:hover {
+            text-decoration: underline;
+        }
+
+.hash-cell {
+    white-space: nowrap;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.copy-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+    .copy-icon:hover {
+        color: #0056b3;
+    }
+
+/* ======== ФОРМИ (реєстрація, логін, завантаження) ======== */
+.upload-container,
+.register-container,
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.upload-container,
+.register-container {
+    background: linear-gradient(135deg, #ffe0f0, #e0d4f7);
+}
+
+.login-container {
+    background: linear-gradient(135deg, #fce4ec, #e1bee7);
+}
+
+    .upload-container h2,
+    .register-container h2,
+    .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.upload-container h2,
+.register-container h2 {
+    color: #a26ae4;
+}
+
+.login-container h2 {
+    color: #880e4f;
+}
+
+.upload-container label,
+.register-container label {
+    margin-top: 15px;
+    color: #8d50c7;
+}
+
+.login-container label {
+    color: #6a1b9a;
+    font-weight: 600;
+}
+
+.upload-container input,
+.register-container input,
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.upload-container input,
+.register-container input {
+    border: 1px solid #d7b4f3;
+    background-color: #fff6fc;
+}
+
+.login-container input {
+    border: 1px solid #ce93d8;
+    background-color: #fdf0f5;
+    transition: 0.3s ease;
+}
+
+    .login-container input:focus {
+        border-color: #ab47bc;
+        box-shadow: 0 0 8px #ba68c8;
+    }
+
+.upload-container button,
+.register-container button,
+.login-container button,
+.file-table-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-container button,
+.register-container button,
+.file-table-container button {
+    background-color: #da94f7;
+}
+
+    .upload-container button:hover,
+    .register-container button:hover,
+    .file-table-container button:hover {
+        background-color: #c073f0;
+    }
+
+.login-container button {
+    background-color: #ec407a;
+}
+
+    .login-container button:hover {
+        background-color: #d81b60;
+    }
+
+/* ======== ТАБЛИЦІ ФАЙЛІВ ======== */
+.file-table-container {
+    max-width: 95%;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffe0f0, #f0e6fc);
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+    .file-table-container h2 {
+        text-align: center;
+        color: #a26ae4;
+        margin-bottom: 20px;
+    }

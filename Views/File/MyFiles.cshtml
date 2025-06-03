@@ -1,0 +1,69 @@
+﻿
+@model IEnumerable<FileMetadata>
+@{
+    ViewBag.Title = "Мої файли";
+}
+<div class="row">
+<form method="get" asp-action="MyFiles" class="mb-3">
+    <input type="text" name="search" placeholder="Searching by name..." value="@Context.Request.Query["search"]" class="form-control mb-2" />
+
+    <select name="sort" class="form-select mb-2">
+        <option value="">Sorting by default</option>
+        <option value="name" selected="@("name" == Context.Request.Query["sort"])">Sorting by file name</option>
+        <option value="date" selected="@("name" == Context.Request.Query["sort"])">Sorting by date</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Apply</button>
+</form>
+<div class="alert alert-info">
+    <strong>Statistics:</strong><br />
+    Total files: <strong>@ViewBag.Total</strong><br />
+    Public files: <strong>@ViewBag.Public</strong>
+</div>
+
+<div class="file-table-container">
+    <h2>My files</h2>
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>IPFS</th>
+            <th>IsPublic</th>
+            <th>Manage Access</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td>@file.UploadDate.ToString()</td>
+                <td>
+           @file.IpfsHash[..Math.Min(file.IpfsHash.Length, 6)]…
+                            <img class="copy-icon" onclick="copyToClipboard('@file.IpfsHash')" src="~/images/paste.png">
+           </td>
+                   <td>
+                   @file.IsPublic
+                </td>
+                        <th>
+                            <a class="btn btn-primary"
+                               asp-controller="File"
+                               asp-action="UpdateAccess"
+                               asp-route-id="@file.Id">
+                                ✐
+                            </a>
+                        </th>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+</div>
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Copied!");
+        });
+    }
+</script>

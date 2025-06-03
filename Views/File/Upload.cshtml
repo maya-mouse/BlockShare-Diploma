@@ -1,0 +1,358 @@
+﻿<form id="uploadForm" enctype="multipart/form-data" class="upload-form-container" method="post">
+	<div class="upload-form-card">
+		<div class="card-body">
+			<h3 class="mb-4 text-center text-dark">Upload File</h3>
+
+			<div class="mb-3">
+				<label for="fileInput" class="form-label fw-bold text-dark">Select file :</label>
+				<input type="file" class="form-control" name="file" id="fileInput" required />
+			</div>
+
+			<div class="form-check form-switch mb-4">
+				<input class="form-check-input" type="checkbox" id="isPublicCheckboxUpload" name="isPublic" onchange="onUploadAccessChange()">
+				<label class="form-check-label text-dark fw-bold" for="isPublicCheckboxUpload">
+					Public access
+				</label>
+			</div>
+
+			<div id="uploadAddressList" class="mb-3">
+				<label for="newAddress" class="form-label fw-bold text-dark">Access only wallets..:</label>
+				<div id="addressesContainer" class="mb-2"></div>
+				<div class="input-group">
+					<input type="text" id="newAddress" class="form-control" placeholder="0x..." />
+					<button type="button" class="btn btn-outline-dark" onclick="addAddress()">➕ Add</button>
+				</div>
+			</div>
+
+			<input type="hidden" name="allowedAddresses" id="allowedAddressesHidden" />
+
+			<div class="text-center mt-4">
+				<button type="submit" class="btn btn-dark btn-lg">Upload</button>
+			</div>
+		</div>
+	</div>
+</form>
+
+<div id="blockInfo" class="block-info" style="margin-top: 20px; padding: 15px; border: 1px solid #ccc; display: none;">
+	<h3>Інформація про блок</h3>
+	<ul>
+		<li><strong>Номер блоку:</strong> <span id="blockNumber"></span></li>
+		<li><strong>Hash блоку:</strong> <span id="blockHash"></span></li>
+		<li><strong>Hash попереднього блоку:</strong> <span id="parentHash"></span></li>
+		<li><strong>Час створення:</strong> <span id="timestamp"></span></li>
+	</ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+<script>
+	const allowedAddresses = new Set();
+	function addAddress() {
+		const input = document.getElementById('newAddress');
+		const value = input.value.trim();
+
+		if (value && !allowedAddresses.has(value)) {
+			allowedAddresses.add(value);
+			updateAddressUI();
+			input.value = '';
+		}
+	}
+	function updateAddressUI() {
+		const container = document.getElementById('addressesContainer');
+		container.innerHTML = '';
+		allowedAddresses.forEach(addr => {
+			const div = document.createElement('div');
+			div.textContent = addr;
+			container.appendChild(div);
+		});
+
+		// Сетимо в hidden поле JSON
+		document.getElementById('allowedAddressesHidden').value = JSON.stringify(Array.from(allowedAddresses));
+	}
+	document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		const fileInput = document.getElementById('fileInput');
+		const file = fileInput.files[0];
+		if (!file) {
+			alert("Оберіть файл");
+			return;
+		}
+
+		// 🔒 Шифрування файлу
+		const fileBuffer = await file.arrayBuffer();
+		const aesKey = crypto.getRandomValues(new Uint8Array(32));
+		const iv = crypto.getRandomValues(new Uint8Array(12));
+		const cryptoKey = await crypto.subtle.importKey("raw", aesKey, { name: "AES-GCM" }, false, ["encrypt"]);
+		const encryptedContent = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, cryptoKey, fileBuffer);
+		const encryptedBlob = new Blob([iv, new Uint8Array(encryptedContent)], { type: "application/octet-stream" });
+		const encryptedFile = new File([encryptedBlob], file.name + ".enc");
+
+		// Підготовка whitelist і метаданих
+		const whitelist = Array.from(allowedAddresses);
+		const base64Key = btoa(String.fromCharCode(...aesKey));
+		const isPublic = document.getElementById('isPublicCheckboxUpload').checked;
+
+		// ✅ Підключення до MetaMask
+		if (typeof window.ethereum === 'undefined') {
+			alert("Встановіть MetaMask");
+			return;
+		}
+
+		const provider = new ethers.providers.Web3Provider(window.ethereum);
+		await provider.send("eth_requestAccounts", []);
+		const signer = provider.getSigner();
+
+		// ⚠️ ТЕПЕР: викликаємо попередній запит до серверу, щоб отримати тимчасовий IPFS hash (локальний)
+		const preRes = await fetch('/File/PrepareUpload', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ fileName: file.name }) // просто підготовка
+		});
+		const preData = await preRes.json();
+		const tempIpfsHash = preData.tempIpfsHash; // наприклад, якийсь UUID або placeholder
+
+	//	const contractAddress = "0x632076041a93fa06fe4bfeec526019b55b0e930c";
+		const contractAddress = await fetch('/File/GetContractAddress')
+			.then(res => res.json())
+			.then(data => data.contractAddress);
+
+		const abi = [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fileId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "grantedTo",
+						"type": "address"
+					}
+				],
+				"name": "AccessGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fileId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "revokedFrom",
+						"type": "address"
+					}
+				],
+				"name": "AccessRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "ipfsHash",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "uploader",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "FileAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_ipfsHash",
+						"type": "string"
+					},
+					{
+						"internalType": "address[]",
+						"name": "allowedUsers",
+						"type": "address[]"
+					}
+				],
+				"name": "addFile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fileCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "getFile",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "grantAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "hasAccess",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "revokeAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		];
+		const contract = new ethers.Contract(contractAddress, abi, signer);
+
+		try {
+			// 👇 Попереднє внесення запису в блокчейн
+			const tx = await contract.addFile(tempIpfsHash, whitelist);
+			const receipt = await tx.wait();
+			const block = await provider.getBlock(receipt.blockNumber);
+			let fileId = null;
+			for (const event of receipt.events) {
+				if (event.event === "AccessGranted") {
+					fileId = event.args[0].toNumber();
+					break;
+				}
+			}
+
+			// ✅ Лише якщо успішно — вантажимо зашифрований файл
+			const formData = new FormData();
+			formData.append('file', encryptedFile);
+			formData.append('aesKey', base64Key);
+		//	console.log(base64Key);
+			formData.append('allowedAddresses', JSON.stringify(whitelist));
+			formData.append('isPublic', isPublic);
+			formData.append('fileId', fileId); // обов'язково
+
+			const uploadRes = await fetch('/File/UploadEncrypted', {
+				method: 'POST',
+				body: formData
+			});
+
+			const result = await uploadRes.json();
+
+			// Показ інформації про блок
+			document.getElementById("blockNumber").textContent = receipt.blockNumber;
+			document.getElementById("blockHash").textContent = receipt.blockHash;
+			document.getElementById("parentHash").textContent = block.parentHash;
+			document.getElementById("timestamp").textContent = new Date(block.timestamp * 1000).toLocaleString();
+			document.getElementById("blockInfo").style.display = "block";
+
+			// Запис блоку
+			await fetch('/Blocks/SaveBlock', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					ipfsHash: result.ipfsHash,
+					blockHash: receipt.blockHash,
+					blockNumber: receipt.blockNumber,
+					transactionHash: receipt.transactionHash,
+					timestamp: new Date(block.timestamp * 1000).toISOString(),
+					uploaderAddress: await signer.getAddress(),
+					ParentHash: block.parentHash
+				})
+			});
+
+		} catch (err) {
+			console.error(err);
+			alert("Помилка транзакції — файл не завантажено!");
+		}
+	});
+
+	function onUploadAccessChange() {
+		const isPublic = document.getElementById('isPublicCheckboxUpload').checked;
+		document.getElementById('uploadAddressList').style.display = isPublic ? 'none' : 'block';
+	}
+</script>
+

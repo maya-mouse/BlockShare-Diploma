@@ -1,0 +1,55 @@
+﻿@using System.Text.Json
+
+<div class="row">
+	<form method="get" asp-action="AccessHistory" class="mb-3">
+		<input type="text" name="search" placeholder="Searching by name or owner..." value="@Context.Request.Query["search"]" class="form-control mb-2" />
+		<select name="sort" class="form-select mb-2">
+			<option value="">Sorting by default</option>
+			<option value="name" selected="@("name" == Context.Request.Query["sort"])">Sorting by file name</option>
+			<option value="date" selected="@("name" == Context.Request.Query["sort"])">Sorting by date</option>
+		</select>
+
+		<button type="submit" class="btn btn-primary">Apply</button>
+	</form>
+
+
+	<div class="file-table-container">
+		<h2>Access history</h2>
+		<table class="custom-table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>File ipfs hash</th>
+					<th>User waller</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var file in Model)
+				{
+					<tr>
+						<td>@file.Filename</td>
+						<td>  @file.IpfsHash.Substring(0, Math.Min(file.IpfsHash.Length, 6))...
+							<img class="copy-icon" onclick="copyToClipboard('@file.IpfsHash')" src="~/images/paste.png">
+						</td>
+						<td>
+							@file.WalletAddress.Substring(0, Math.Min(file.WalletAddress.Length, 6))...
+							<img class="copy-icon" onclick="copyToClipboard('@file.IpfsHash')" src="~/images/paste.png">
+						</td>
+						<td>@file.AccessedAt.ToShortDateString()</td>
+						
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<script>
+	function copyToClipboard(text) {
+		navigator.clipboard.writeText(text).then(() => {
+			alert("Copied!");
+		});
+	}
+</script>
