@@ -37,3 +37,8 @@ Decentralized storage - IPFS
 Wallet integration - MetaMask 
 
 Screenshots
+![image](https://github.com/user-attachments/assets/7ec2e9e3-489a-40fc-93a7-119bfcb216f5)
+![image](https://github.com/user-attachments/assets/0af63717-1331-4fd7-bc17-fdf98d980ddf)
+![image](https://github.com/user-attachments/assets/364de468-c18e-4964-837f-11f396de807e)
+![image](https://github.com/user-attachments/assets/654c0ede-b84b-4335-8cd8-dc6634eb0e99)
+
