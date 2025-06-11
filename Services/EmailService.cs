@@ -17,7 +17,7 @@ namespace BlockShare.Services
 			using var smtp = new SmtpClient("smtp.ethereal.email")
 			{
 				Port = 587,
-				Credentials = new NetworkCredential("dean.hagenes@ethereal.email", "u3nx6s48mfdGJPwrrX"),
+				Credentials = new NetworkCredential("YOUR_LOGIN_ETHEREAL_EMAIL", "YOUR_PASSWORD_ETHEREAL_EMAIL"),
 				EnableSsl = true
 			};
 
@@ -36,7 +36,7 @@ namespace BlockShare.Services
             using var smtp = new SmtpClient("smtp.ethereal.email")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("dean.hagenes@ethereal.email", "u3nx6s48mfdGJPwrrX"),
+                Credentials = new NetworkCredential("YOUR_LOGIN_ETHEREAL_EMAIL", "YOUR_PASSWORD_ETHEREAL_EMAIL"),
                 EnableSsl = true
             };
 
